@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="需要发送的字符串" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5e5-yW-3C6">
+                                <rect key="frame" x="32" y="40" width="536" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="本地字符串" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHZ-zg-alq">
+                                <rect key="frame" x="32" y="124" width="536" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCL-mc-BMr">
+                                <rect key="frame" x="32" y="80" width="536" height="30"/>
+                                <color key="backgroundColor" red="0.74718819449093155" green="0.81246543626475098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="发送数据">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMsg:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NB2-c0-Suh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-cA-dXG">
+                                <rect key="frame" x="32" y="162" width="536" height="30"/>
+                                <color key="backgroundColor" red="0.74718819449999996" green="0.81246543630000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="修改本地数据">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeValue:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GQ8-e0-qfQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-OH-DLF">
+                                <rect key="frame" x="32" y="225" width="536" height="355"/>
+                                <color key="backgroundColor" red="0.44313728809356689" green="0.90980398654937744" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69825082799683669" green="0.8529689054800943" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1fr-OH-DLF" firstAttribute="width" secondItem="Rvo-cA-dXG" secondAttribute="width" id="0WF-QF-eGn"/>
+                            <constraint firstItem="5e5-yW-3C6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="0zw-eY-l0i"/>
+                            <constraint firstItem="Rvo-cA-dXG" firstAttribute="leading" secondItem="FCL-mc-BMr" secondAttribute="leading" id="4kJ-Lg-ZPv"/>
+                            <constraint firstItem="1fr-OH-DLF" firstAttribute="leading" secondItem="Rvo-cA-dXG" secondAttribute="leading" id="8Hi-ZS-NdY"/>
+                            <constraint firstItem="5e5-yW-3C6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="JyH-FJ-SwT"/>
+                            <constraint firstItem="FCL-mc-BMr" firstAttribute="top" secondItem="5e5-yW-3C6" secondAttribute="bottom" constant="10" id="Kpt-KZ-ctc"/>
+                            <constraint firstItem="Rvo-cA-dXG" firstAttribute="width" secondItem="FCL-mc-BMr" secondAttribute="width" id="RnA-21-S57"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1fr-OH-DLF" secondAttribute="bottom" constant="20" id="WTD-Yf-fUc"/>
+                            <constraint firstItem="sHZ-zg-alq" firstAttribute="leading" secondItem="FCL-mc-BMr" secondAttribute="leading" id="dT9-nG-voW"/>
+                            <constraint firstItem="1fr-OH-DLF" firstAttribute="top" secondItem="Rvo-cA-dXG" secondAttribute="top" constant="63" id="fbQ-6F-EjP"/>
+                            <constraint firstItem="Rvo-cA-dXG" firstAttribute="top" secondItem="sHZ-zg-alq" secondAttribute="bottom" constant="8" id="ih6-nJ-m2n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5e5-yW-3C6" secondAttribute="trailing" constant="16" id="myv-1h-MtQ"/>
+                            <constraint firstItem="sHZ-zg-alq" firstAttribute="width" secondItem="FCL-mc-BMr" secondAttribute="width" id="q6w-0q-WnS"/>
+                            <constraint firstItem="5e5-yW-3C6" firstAttribute="width" secondItem="FCL-mc-BMr" secondAttribute="width" id="sKR-bg-QZb"/>
+                            <constraint firstItem="sHZ-zg-alq" firstAttribute="top" secondItem="FCL-mc-BMr" secondAttribute="bottom" constant="14" id="u6N-I1-1ZV"/>
+                            <constraint firstItem="5e5-yW-3C6" firstAttribute="leading" secondItem="FCL-mc-BMr" secondAttribute="leading" id="ytE-Va-mLN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="InfoTextView" destination="1fr-OH-DLF" id="u3U-nV-2Ko"/>
+                        <outlet property="locationTextField" destination="sHZ-zg-alq" id="ThQ-Wo-uK1"/>
+                        <outlet property="sendMsgTextField" destination="5e5-yW-3C6" id="J43-2z-XqT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="218"/>
+        </scene>
+    </scenes>
+</document>
