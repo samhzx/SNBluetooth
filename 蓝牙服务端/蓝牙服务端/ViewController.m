@@ -72,18 +72,26 @@ static NSString *const kCharacteristicUUID2 = @"7D887E40-95DE-40D6-9AA0-36EDE2BA
 	CBUUID *characteristicUUID1 = [CBUUID UUIDWithString:kCharacteristicUUID1];
 	CBUUID *characteristicUUID2 = [CBUUID UUIDWithString:kCharacteristicUUID2];
 
+
+    //写的特征
 	self.customWriteCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyWriteWithoutResponse value:nil permissions:CBAttributePermissionsWriteable];
 
 	NSString *string = @"欢迎连接";
+    //读的特征
 	NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
 	self.customReadCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID1 properties:CBCharacteristicPropertyRead value:data permissions:CBAttributePermissionsReadable];
 
 
+    //通知的特诊
 	self.customNotiCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID2 properties:CBCharacteristicPropertyNotify value:nil permissions:CBAttributePermissionsReadEncryptionRequired];
 
+    
 	CBUUID *serviceUUID = [CBUUID UUIDWithString:kServiceUUID];
+    //初始化一个服务
 	self.customService = [[CBMutableService alloc] initWithType:serviceUUID primary:YES];
+    //把特征添加到服务里面去
 	[self.customService setCharacteristics:@[self.customWriteCharacteristic, self.customReadCharacteristic, self.customNotiCharacteristic]];
+    //把服务添加到设备上面取
 	[self.peripheralManager addService:self.customService];
 }
 
